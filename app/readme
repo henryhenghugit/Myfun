@@ -1,0 +1,28 @@
+Create a file called hello.py:
+
+print("Hello, World!")
+2️⃣ Create a Dockerfile
+
+Create a file named Dockerfile in the same folder:
+
+# Use Python official image
+FROM python:3.11-slim
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy the Python script into the container
+COPY hello.py .
+
+# Run the script
+CMD ["python", "hello.py"]
+3️⃣ Build the Docker image
+
+Open your terminal in the folder containing hello.py and run:
+
+docker build -t hello-python .
+
+-t hello-python → names the Docker image hello-python.
+
+4️⃣ Run the container
+docker run hello-python
